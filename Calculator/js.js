@@ -42,10 +42,12 @@ keys.addEventListener('click', e => {
             clearKey.textContent = "AC";
         }
         else{
-            clearKey.textContent = "C";
+            clearKey.textContent = "CE";
         }
 
-        if(action == 'add' || action == 'subtract' || action == 'multiply' || action == 'divide'){
+        if(action == 'add' || action == 'subtract' 
+            || action == 'multiply' || action == 'divide'){
+
             calculator.dataset.firstNumber = resultNum;
             calculator.dataset.operator = action;
             calculator.dataset.previousKey = 'operator';
@@ -63,23 +65,33 @@ keys.addEventListener('click', e => {
             calculator.dataset.previousKey = 'calculate';
         }
 
-        if(previousKey == 'operator' && !resultNum == '' && action == 'decimal'){
+        if(previousKey == 'operator' && !resultNum == ''
+            && action == 'decimal'){
+
             result.textContent = '0.';
         }
 
 
         if(action == 'calculate'){
-            const firstNumber = calculator.dataset.firstNumber;
+            let firstNumber = calculator.dataset.firstNumber;
             const operator = calculator.dataset.operator;
-            const secondNumber = resultNum;
+            let secondNumber = resultNum;
 
-            result.textContent = calculate(firstNumber, operator, secondNumber);
-
+            if(firstNumber && operator){
+                if(previousKey == "calculate"){
+                    firstNumber = resultNum;
+                    secondNumber = calculator.dataset.modValue;
+                }
+                result.textContent = calculate(firstNumber, operator, secondNumber);
+                calculator.dataset.firstNumber = resultNum;
+            }
+            else{
+                result.textContent = "0";
+            }
+            calculator.dataset.modValue = secondNumber;
+            calculator.dataset.previousKey = "calculate";
         }
-        
-        
     }
-
 })
 
 function turnOn(){
@@ -89,11 +101,13 @@ function turnOn(){
 
     if(this.value == "Block"){
         this.value = "Unblock";
+        this.innerHTML = "OFF";
         result.textContent = '0';
         turnOnButton.style.backgroundColor = '#D2D2D2';
     }
     else{
         this.value = "Block";
+        this.innerHTML = "ON";
         turnOnButton.style.backgroundColor = 'rgb(73, 184, 73)';
         result.textContent = '';
         clearKey.textContent = "AC";
@@ -110,6 +124,7 @@ function clearBoard(){
         calculator.dataset.previousKey = '';
         calculator.dataset.operator = '';
         calculator.dataset.firstNumber = '';
+        calculator.dataset.modValue = "";
     }
 }
 
@@ -118,17 +133,24 @@ const calculate = (firstNumber, operator, secondNumber) => {
     const n1 = parseFloat(firstNumber);
     const n2 = parseFloat(secondNumber);
 
-    if(operator == 'add'){
-        return n1 + n2;
-    }
-    else if(operator == 'subtract'){
-        return n1 - n2;
-    }
-    else if(operator == 'multiply'){
-        return n1 * n2;
-    }
-    else if(operator == 'divide'){
-        return n1 / n2;
+    switch(operator){
+        case "add":
+            return n1 + n2;
+            break;
+        case "subtract":
+            return n1 - n2;
+            break;
+        case "multiply":
+            return n1 * n2;
+            break;
+        case "divide":
+            if(!n2 == 0){
+                return n1 / n2;
+                break;
+            }
+            else{
+                return "Do not divide by 0!";
+            }
     }
 }
 
