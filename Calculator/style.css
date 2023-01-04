@@ -12,7 +12,6 @@ body{
     box-sizing: border-box;
     border: 3px solid #000;
     border-radius: 10px;
-    height: 530px;
     width: 755px;
     margin-top: 70px;
     display: flex;
@@ -21,6 +20,7 @@ body{
     -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
     -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
     box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    overflow: hidden;
 }
 
 button{
@@ -34,7 +34,6 @@ p{
 .screen{
     text-align: center;
     background-color: #2F3237;
-    height: 125px;
     display: block;
     overflow: hidden;
     perspective: 1px;
@@ -86,12 +85,11 @@ p{
 
 .btnChar{
     box-sizing: border-box;
-    width: 150px;
-    padding: 30px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     background-color: #D2D2D2;
+    color: #000;
     font-weight: 700;
     font-size: 1.714285714em;
     transition: all .7s ease-out
@@ -99,8 +97,6 @@ p{
 
 .btnChar:focus{
     box-sizing: border-box;
-    width: 150px;
-    padding: 30px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -112,11 +108,10 @@ p{
 
 .btn{
     box-sizing: border-box;
-    width: 150px;
-    padding: 30px;
     text-align: center;
     background-color: #eee;
     font-weight: 700;
+    color: #000;
     font-size: 1.714285714em;
     margin: 0 !important;
     transition: all .7s ease-out;
@@ -124,12 +119,11 @@ p{
 
 .btnClear{
     box-sizing: border-box;
-    width: 150px;
-    padding: 30px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     background-color: #eee;
+    color: #000;
     font-weight: 700;
     font-size: 1.714285714em;
     transition: all .7s ease-out;
@@ -141,12 +135,11 @@ p{
 
 .turnOn{
     box-sizing: border-box;
-    width: 150px;
-    padding: 30px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     background-color: #D2D2D2;
+    color: #000;
     font-weight: 700;
     font-size: 1.714285714em;
     transition: all .7s ease-out
@@ -168,4 +161,67 @@ footer{
     border: 1px solid #000;
     
 }
+
+@media screen and (max-width: 960px) {
+    .container {
+        width: 630px;
+        height: 100%;
+        font-size: 12px;
+    }
+
+    .screen {
+        width: 100%;
+    }
+
+    .buttons {
+        text-align: center;
+        grid-template-columns: 125px 125px 125px 125px 125px; 
+        grid-template-rows: 75px 75px 75px 75px;
+    }
+  }
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 560px;
+        height: 100%;
+        font-size: 12px;
+    }
+
+    .screen {
+        width: 100%;
+    }
+
+    .buttons {
+        text-align: center;
+        grid-template-columns: 115px 115px 115px 115px 115px; 
+        grid-template-rows: 65px 65px 65px 65px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 300px;
+        height: 100%;
+        font-size: 6px;
+        margin-top: 50%;
+    }
+
+    .screen {
+        width: 100%;
+    }
+
+    .screen > p {
+        font-size: 20px;
+        padding-right: 10px;
+    }
+
+    .buttons {
+        text-align: center;
+        grid-template-columns: 60px 60px 60px 60px 60px; 
+        grid-template-rows: 45px 45px 45px 45px;
+    }
+}
+
+
+
 

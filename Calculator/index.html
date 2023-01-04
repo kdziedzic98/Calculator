@@ -1,44 +1,91 @@
 <!DOCTYPE html>
 <html lang="pl">
-    <head>
-        <meta charset="utf-8">
-        <title>Simple calculator</title>
-        <link href="css/all.css" rel="stylesheet">
-        <link href="style.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <main>
-            <div class="container">
-                <div class="calculator">
-                    <div class="screen">
-                        <p></p>
-                    </div>
-                    <div class="buttons">
-                            <button type="submit" class="turnOn" value="Block">ON</button>
-                            <button type="submit" class="btnChar" data-action="add" disabled>+</button>
-                            <button type="submit" class="btnChar" data-action="subtract" disabled>-</button>
-                            <button type="submit" class="btnChar" data-action="multiply" disabled>x</button>
-                            <button type="submit" class="btnChar" data-action="divide" disabled>÷</button>
-                            <button type="submit" class="btn" disabled>9</button>
-                            <button type="submit" class="btn" disabled>8</button>
-                            <button type="submit" class="btn" disabled>7</button>
-                            <button type="submit" class="btn" disabled>6</button>
-                            <button type="submit" class="btn" disabled>5</button>
-                            <button type="submit" class="btn" disabled>4</button>
-                            <button type="submit" class="btn" disabled>3</button>
-                            <button type="submit" class="btn" disabled>2</button>
-                            <button type="submit" class="btn" style="overflow: hidden; perspective: 1; border-bottom-left-radius: 10px;" disabled>1</button>
-                            <button type="submit" class="btn" disabled>0</button>
-                            <button type="submit" class="btn" data-action="decimal" disabled>.</button>
-                            <button type="submit" class="btnClear" data-action="clear" disabled>AC</button>
-                            <button type="submit" class="equal" data-action="calculate" disabled>=</button>
-                    </div>
-                </div>
-            </div>
-        </main>
+  <head>
+    <meta charset="utf-8" />
+    <title>Simple calculator</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <link href="css/all.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="calculator">
+          <div class="screen">
+            <p></p>
+          </div>
+          <div class="buttons">
+            <button type="submit" class="turnOn" value="Block">ON</button>
+            <button type="submit" class="btnChar" data-action="add" disabled>
+              +
+            </button>
+            <button
+              type="submit"
+              class="btnChar"
+              data-action="subtract"
+              disabled
+            >
+              -
+            </button>
+            <button
+              type="submit"
+              class="btnChar"
+              data-action="multiply"
+              disabled
+            >
+              x
+            </button>
+            <button type="submit" class="btnChar" data-action="divide" disabled>
+              ÷
+            </button>
+            <button type="submit" class="btn" disabled>9</button>
+            <button type="submit" class="btn" disabled>8</button>
+            <button type="submit" class="btn" disabled>7</button>
+            <button type="submit" class="btn" disabled>6</button>
+            <button type="submit" class="btn" disabled>5</button>
+            <button type="submit" class="btn" disabled>4</button>
+            <button type="submit" class="btn" disabled>3</button>
+            <button type="submit" class="btn" disabled>2</button>
+            <button
+              type="submit"
+              class="btn"
+              style="
+                overflow: hidden;
+                perspective: 1;
+                border-bottom-left-radius: 10px;
+              "
+              disabled
+            >
+              1
+            </button>
+            <button type="submit" class="btn" disabled>0</button>
+            <button type="submit" class="btn" data-action="decimal" disabled>
+              .
+            </button>
+            <button type="submit" class="btnClear" data-action="clear" disabled>
+              AC
+            </button>
+            <button
+              type="submit"
+              class="equal"
+              data-action="calculate"
+              disabled
+            >
+              =
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
     <script src="js.js"></script>
-    </body>
+  </body>
 </html>
